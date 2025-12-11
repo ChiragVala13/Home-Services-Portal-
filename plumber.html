@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumber Service Request</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2fbff;
+            padding: 40px;
+        }
+        .container {
+            width: 380px;
+            margin: auto;
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightgray;
+        }
+        input, textarea, button {
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+        }
+        button {
+            background:#0275d8;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Plumber Service Booking</h2>
+
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="phone" placeholder="Contact Number">
+        <input type="text" id="address" placeholder="Full Address">
+        <textarea id="problem" placeholder="Describe Leakage or Issue"></textarea>
+        
+        <button onclick="submitData()">Submit Request</button>
+    </div>
+
+    <script>
+        async function submitData(){
+            let data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                problem: document.getElementById('problem').value,
+            };
+
+            let res = await fetch("http://localhost:5000/api/plumber", {
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify(data)
+            });
+
+            let result = await res.json();
+            alert(result.message);
+        }
+    </script>
+
+</body>
+</html>

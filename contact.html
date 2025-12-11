@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Support</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">HOME SERVICES</a>
+    <div>
+      <a href="index.html" class="btn btn-outline-light btn-sm me-2">Home</a>
+      <a href="doctor.html" class="btn btn-outline-light btn-sm">Doctors</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+
+  <h2 class="mb-4 text-center">Emergency Quick Help</h2>
+
+  <div class="row text-center mb-5">
+
+    <div class="col-md-4 mb-3">
+      <a href="tel:108" class="btn btn-danger w-100 py-3">
+        🚑 Ambulance
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <a href="tel:100" class="btn btn-warning w-100 py-3">
+        👮 Police
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <a href="tel:101" class="btn btn-primary w-100 py-3">
+        🔥 Fire
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- CONTACT FORM -->
+  <h3 class="mb-3">Send a Support Request</h3>
+
+  <form onsubmit="submitRequest(event)">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="number" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Message / Issue</label>
+      <textarea class="form-control" rows="3" required></textarea>
+    </div>
+
+    <button class="btn btn-dark btn-lg w-100">SUBMIT REQUEST</button>
+  </form>
+
+</div>
+
+<script>
+function submitRequest(event){
+  event.preventDefault();
+  alert("Request Submitted Successfully!");
+}
+</script>
+
+</body>
+</html>
+
